@@ -1,3 +1,43 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    margin: 0 auto;
+}
+
+.content-whatapp {
+    width: 1200px;
+    height: 800px;
+    border: 1px solid black;
+    margin-top: 20px;
+    display: flex;
+}
+
+.sidebar {
+    background-color: red;
+    width: 30%;
+    height: 100%;
+}
+.content-text {
+    width: 70%;
+    height: 100%;
+    background-color: cadetblue;
+}
+
+.sidebar .name-user {
+    border: 1px solid black;
+    height: 100px;
+}
+
+.sidebar .notification-message {
+    
+}
+
+
+
 .profile-image {
     height: 90px;
     width: 90px;
