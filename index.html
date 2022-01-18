@@ -55,21 +55,28 @@
 
 
                     <div class="search-user">
-                        
                         <i class="fas fa-search"></i>
                         <input type="text" placeholder="Cerca o inizia una nuova chat">
                     </div>
 
-                    <div v-for="(contact, i) in contacts" class="profile-image" >
-                        <img :src="contact.avatar" alt="">
-                        <p>{{ contact.name }}</p>
-                      </div>
+                    <div class="list-contact">
+                        <div v-for="(contact, i) in contacts" class="profile-image" >
+                            <img :src="contact.avatar" alt="">
+                            <p>{{ contact.name }}</p>
+                        </div>
 
+                    </div>
 
                 </div>
 
+                <!-- ----------------FINE SIDEBAR ------------------>
+
+
+
+                <!-------------------INIZIO MAIN ------------------->
+
                 <!-- parte di destra  -->
-                <div class="content-text px-2"> 
+                <main>
 
                     <div class="header-user">
 
@@ -78,7 +85,7 @@
                                 <img src="./img/avatar_1.jpg" alt="">
                             </div>
                             <div class="text-header">
-                                <p class="mb-0">Michele</p>
+                                <p>Michele</p>
                                 <p class="color-notification">ultimo accesso oggi alle</p>
                             </div>
                         </div>
@@ -88,9 +95,14 @@
                             <i class="fas fa-paperclip"></i>
                             <i class="fas fa-ellipsis-v"></i>                     
                         </div>
+                    </div>
 
-                </div>
-        </div>
+                    <div class="message-container">
+                        <!-- aggiunta immagine di sfondo messaggi  -->
+
+                    </div>
+
+                </main>
 
        
 
