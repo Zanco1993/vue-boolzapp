@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>vue-boolzapp</title>
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="./css/style.css">
@@ -18,7 +18,8 @@
 
         <div class="container content-whatapp">
 
-                <div class="sidebar">
+                <!-- parte di sinistra -->
+                <div class="sidebar px-2">
 
                     <div class="name-user">
                         <!-- elementi da aggiungere -->
@@ -33,12 +34,12 @@
                         -->
                     </div>
 
-                    <div class="search-user">
+                    <div class="search-user mt-2">
                         <i class="fas fa-search"></i>
-                        <input type="text" placeholder="prova">
+                        <input type="text" placeholder="Cerca o inizia una nuova chat">
                     </div>
 
-                    <div class="profile-image" v-for="(contact, i) in contacts">
+                    <div v-for="(contact, i) in contacts" class="profile-image my-2" >
                         <img :src="contact.avatar" alt="">
                         <p>{{ contact.name }}</p>
                       </div>
@@ -46,8 +47,26 @@
 
                 </div>
 
+                <!-- parte di destra  -->
+                <div class="content-text px-2"> 
 
-                <div class="content-text">
+                    <div class="header-user">
+
+                        <div class="user">
+                            <div class="user-image">
+                                <img src="./img/avatar_1.jpg" alt="">
+                            </div>
+                            <div class="text-header">
+                                <p class="mb-0">Michele</p>
+                                <p class="color-notification">ultimo accesso oggi alle</p>
+                            </div>
+                        </div>
+
+                        <div class="settings-comand">
+                            <i class="fas fa-search"></i>
+                            <i class="fas fa-paperclip"></i>
+                            <i class="fas fa-ellipsis-v"></i>                        </div>
+                    </div>
 
                 </div>
         </div>
