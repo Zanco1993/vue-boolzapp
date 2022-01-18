@@ -6,6 +6,17 @@
 
 body {
     font-family: 'Open Sans', sans-serif;
+    background-color: grey;
+}
+
+.back-body .green-back {
+    height: 15vh;
+    background-color: rgb(54, 159, 126);
+}
+
+.back-body .grey-back {
+    height: 85vh;
+    background-color: rgb(213, 213, 213);
 }
 
 .container {
@@ -15,20 +26,29 @@ body {
 .color-notification {
     color: #a3a3a3;
 }
+
+.cursor {
+    cursor: pointer;
+}
 /* ------------------------------------------- */
 
 .content-whatapp {
     width: 1200px;
     height: 800px;
-    margin-top: 20px;
     display: flex;
     border: 1px solid rgb(199, 199, 199);
+    position: absolute;
+    z-index: 1;
+    left: 19%;
+    top: 30px;
+
 }
 
 .sidebar {
     width: 30%;
     height: 100%;
     border: 1px solid rgb(199, 199, 199);
+    background-color: white;
 }
 
 .sidebar .name-user {
