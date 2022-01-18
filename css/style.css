@@ -13,10 +13,9 @@ body {
 }
 
 .color-notification {
-    color: lightgrey;
+    color: #a3a3a3;
 }
 /* ------------------------------------------- */
-
 
 .content-whatapp {
     width: 1200px;
@@ -168,3 +167,39 @@ main .message-container {
     height: calc(100% - 200px);
     background-position: center center;
 }
+
+/* ------------------------ footer ---------------------- */
+
+.send-message {
+    background-color: #f9f9f9;
+    height: 100px;
+    display: flex;
+}
+
+.send-message .emoticon, .send-message .audio-message {
+    height: 100px;
+    width: 100px;
+    text-align: center;
+    line-height: 100px;
+    padding-top: 10px;
+}
+
+.send-message .message {
+    height: 100px;
+    flex-grow: 1;
+    text-align: center;
+    line-height: 100px;
+}
+.send-message .message input {
+    width: 100%;    
+    height: 60px;
+    border-style: none;
+
+}
+
+.send-message .far, .send-message .fas {
+    font-size: 36px;
+    color: grey;
+}
+
+
