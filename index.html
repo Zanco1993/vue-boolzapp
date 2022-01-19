@@ -58,16 +58,26 @@
                     </div>
 
 
-
                     <div class="search-user">
                         <i class="fas fa-search"></i>
-                        <input type="text" placeholder="Cerca o inizia una nuova chat">
+                        <input type="text"
+                        v-model="searchName"
+                        @keyup.enter="searchContact"
+                        placeholder="Cerca o inizia una nuova chat">
                     </div>
 
                     <div class="list-contact">
-                        <div v-for="(contact, i) in contacts" @click="setCurrentContact(i)" class="profile-image cursor" >
-                            <img :src="contact.avatar" alt="">
-                            <p>{{ contact.name }}</p>
+                        <div v-if="filteredContacts.length > 0">
+                            <div v-for="(contact, i) in filteredContacts" @click="setCurrentContact(i)" class="profile-image cursor" >
+                                <img :src="contact.avatar" alt="">
+                                <p>{{ contact.name }}</p>
+                            </div>
+                        </div>
+                        <div v-else>
+                            <div v-for="(contact, i) in contacts" @click="setCurrentContact(i)" class="profile-image cursor" >
+                                <img :src="contact.avatar" alt="">
+                                <p>{{ contact.name }}</p>
+                            </div>
                         </div>
 
                     </div>

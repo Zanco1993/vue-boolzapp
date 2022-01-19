@@ -1,8 +1,7 @@
 new Vue({
     el: "#app",
     data: {
-        currentIndex: 0,
-        autoPlayMessage: null,
+        filteredContacts: [],
         contacts: [
             {
                 name: 'Michele',
@@ -48,7 +47,7 @@ new Vue({
                     }
                 ],
             },
-        
+
             {
                 name: 'Samuele',
                 avatar: './img/avatar_3.jpg',
@@ -89,32 +88,37 @@ new Vue({
                 ],
             },
         ],
+        currentIndex: 0,
+        autoPlayMessage: null,
+        searchName: '',
 
-        innerText: 
-            {
-                date: '',
-                text: '',
-                status: 'sent'
-            },
 
-        autoText: 
-            {
-                // prova la risposta con il nome a chi è indirizzato
-                date: '',
-                text: 'Ciao',
-                status: 'received'
-            } 
-        
-        
+
+        innerText:
+        {
+            date: '',
+            text: '',
+            status: 'sent'
+        },
+
+        autoText:
+        {
+            // prova la risposta con il nome a chi è indirizzato
+            date: '',
+            text: 'Ciao',
+            status: 'received'
+        }
+
+
     },
 
     methods: {
-        sentMessage: function(message) {
+        sentMessage: function (message) {
             let classesSent = [];
-            if(message.status === 'sent') {
+            if (message.status === 'sent') {
                 classesSent.push('sent')
             }
-            if(message.status === 'received') {
+            if (message.status === 'received') {
                 classesSent.push('received')
             }
             // if(message.status = 'received') {
@@ -123,30 +127,33 @@ new Vue({
             return classesSent;
         },
 
-        setCurrentContact: function(i) {
+        setCurrentContact: function (i) {
             this.currentIndex = i;
         },
 
-        autoMessage: function(currentIndex) {
-            this.autoPlayMessage = setTimeout( () => {
-            this.contacts[currentIndex].messages.push(this.autoText);
+        autoMessage: function (currentIndex) {
+            this.autoPlayMessage = setTimeout(() => {
+                this.contacts[currentIndex].messages.push(this.autoText);
             }, 1000)
         },
 
-        addItemText: function(currentIndex) {
-            if(this.innerText.text !== '') {
+        addItemText: function (currentIndex) {
+            if (this.innerText.text !== '') {
                 this.contacts[currentIndex].messages.push(this.innerText);
-                this.innerText =  {
+                this.innerText = {
                     date: '',
                     text: '',
                     status: 'sent'
                 }
                 this.autoMessage(currentIndex)
             }
+        },
 
-
-            },
-
-        }
-
+        searchContact: function () {
+            this.filteredContacts = this.contacts.filter((contact) =>
+                contact.name.toLowerCase() === this.searchName.toLowerCase()
+            )
+        },
+    }
 })
+
