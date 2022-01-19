@@ -71,7 +71,7 @@ new Vue({
                 ],
             },
             {
-                name: 'Luisa',
+                name: 'Andrea',
                 avatar: './img/avatar_4.jpg',
                 visible: true,
                 messages: [
@@ -88,6 +88,16 @@ new Vue({
                 ],
             },
         ],
+
+        innerText: 
+            {
+                date: '',
+                text: '',
+                status: 'sent'
+            },
+
+            
+        
         
     },
 
@@ -105,10 +115,25 @@ new Vue({
             // }
             return classesSent;
         },
+
         setCurrentContact: function(i) {
             this.currentIndex = i;
-        }
+        },
 
-    }
+        addItemText: function(currentIndex) {
+            if(this.innerText.text !== '') {
+                this.contacts[currentIndex].messages.push(this.innerText);
+                this.innerText =  {
+                    date: '',
+                    text: '',
+                    status: 'sent'
+                }
+
+
+
+                }
+            },
+
+        }
 
 })

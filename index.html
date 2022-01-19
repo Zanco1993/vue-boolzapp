@@ -65,7 +65,7 @@
                     </div>
 
                     <div class="list-contact">
-                        <div v-for="(contact, i) in contacts" @click="setCurrentContact(i)" class="profile-image" >
+                        <div v-for="(contact, i) in contacts" @click="setCurrentContact(i)" class="profile-image cursor" >
                             <img :src="contact.avatar" alt="">
                             <p>{{ contact.name }}</p>
                         </div>
@@ -133,7 +133,7 @@
                             <i class="far fa-smile"></i>
                         </div>
                         <div class="message">
-                            <input type="text" placeholder="Scrivi un messaggio">
+                            <input v-model="innerText.text" @keyup.enter="addItemText(currentIndex)" type="text" placeholder="Scrivi un messaggio">
                         </div>
                         <div class="audio-message">
                             <i class="fas fa-microphone"></i>
