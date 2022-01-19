@@ -68,15 +68,25 @@
 
                     <div class="list-contact">
                         <div v-if="filteredContacts.length > 0">
-                            <div v-for="(contact, i) in filteredContacts" @click="setCurrentContact(i)" class="profile-image cursor" >
-                                <img :src="contact.avatar" alt="">
-                                <p>{{ contact.name }}</p>
+                            <div v-for="(contact, i) in filteredContacts"
+                                @click="setCurrentContact(i)" 
+                                class="profile-image cursor">
+                                <div class="box-image">
+                                    <img :src="contact.avatar" alt="">
+                                    <p>{{ contact.name }}</p>
+
+                                </div>
                             </div>
                         </div>
                         <div v-else>
-                            <div v-for="(contact, i) in contacts" @click="setCurrentContact(i)" class="profile-image cursor" >
-                                <img :src="contact.avatar" alt="">
-                                <p>{{ contact.name }}</p>
+                            <div v-for="(contact, i) in contacts" 
+                            @click="setCurrentContact(i)" 
+                            class="profile-image cursor">
+                                <div class="box-image">
+                                    <img :src="contact.avatar" alt="">
+                                    <p>{{ contact.name }}</p>
+                                    
+                                </div>
                             </div>
                         </div>
 

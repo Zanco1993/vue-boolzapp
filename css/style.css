@@ -116,15 +116,20 @@ body {
 }
 
 .sidebar .profile-image {
-    height: 70px;
+    padding: 10px 0;
+}
+.sidebar .profile-image:hover {
+    background-color: #e8e8e8;
+}
+
+.list-contact .box-image {
     width: 70px;
-    margin: 10px 0;
-    object-fit: cover;
+    height: 70px;
     display: flex;
     align-items: center;
 }
 
-.profile-image img {
+.profile-image .box-image img {
     width: 100%;
     border-radius: 50%;
 }
