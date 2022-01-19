@@ -185,12 +185,26 @@ main .user-contact  .text-header {
 
 main .message-container {
     height: calc(100% - 200px);
+    padding: 20px 100px;
 }
 
 main .message-container {
     background-image: url("../img/mine.jpg");
     height: calc(100% - 200px);
     background-position: center center;
+}
+
+.message-container .content-message {
+    width: 300px;
+    border: 1px solid black;
+    padding: 15px 10px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border-style: none;
+}
+.message-container .content-message.sent {
+    background-color: lightgreen;
+    margin-left: 300px;
 }
 
 /* ------------------------ footer ---------------------- */

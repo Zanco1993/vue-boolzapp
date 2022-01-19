@@ -14,7 +14,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 
 </head>
-<body>
+
     
     <div id="app">
 
@@ -104,6 +104,17 @@
 
                     <div class="message-container">
                         <!-- aggiunta immagine di sfondo messaggi  -->
+                        <div
+                        v-for="(message, i) in contacts[i].messages"
+                        class="content-message"
+                        :class="sentMessage(i)">
+
+                           <div>
+                               {{ i }}
+                                {{ message.text }}
+                           </div>
+
+                        </div>
 
                         <!-- TODO
                         Creare dei box che vadano a prendere i messaggi dall'array di oggetti
@@ -130,12 +141,13 @@
                         </div>
                         
                     </div>
-
+                    
                 </main>
 
+            </div>
 
                 
-       
+  </div>     
 
 
 
@@ -143,7 +155,6 @@
 
 
 
-    </div>
 
 
 
