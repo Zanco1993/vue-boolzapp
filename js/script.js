@@ -2,6 +2,7 @@ new Vue({
     el: "#app",
     data: {
         currentIndex: 0,
+        autoPlayMessage: null,
         contacts: [
             {
                 name: 'Michele',
@@ -97,12 +98,12 @@ new Vue({
             },
 
         autoText: 
-        {
-            // prova la risposta con il nome a chi è indirizzato
-            date: '',
-            text: 'Ciao' + this.contacts[currentIndex].name,
-            status: 'sent'
-        } 
+            {
+                // prova la risposta con il nome a chi è indirizzato
+                date: '',
+                text: 'Ciao',
+                status: 'received'
+            } 
         
         
     },
@@ -126,6 +127,12 @@ new Vue({
             this.currentIndex = i;
         },
 
+        autoMessage: function(currentIndex) {
+            this.autoPlayMessage = setTimeout( () => {
+            this.contacts[currentIndex].messages.push(this.autoText);
+            }, 1000)
+        },
+
         addItemText: function(currentIndex) {
             if(this.innerText.text !== '') {
                 this.contacts[currentIndex].messages.push(this.innerText);
@@ -134,10 +141,10 @@ new Vue({
                     text: '',
                     status: 'sent'
                 }
+                this.autoMessage(currentIndex)
+            }
 
 
-
-                }
             },
 
         }
