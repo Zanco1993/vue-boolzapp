@@ -104,6 +104,9 @@ new Vue({
             //     classesSent.push('received')
             // }
             return classesSent;
+        },
+        setCurrentContact: function(i) {
+            this.currentIndex = i;
         }
 
     }

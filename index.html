@@ -65,7 +65,7 @@
                     </div>
 
                     <div class="list-contact">
-                        <div v-for="(contact, i) in contacts" @click="" class="profile-image" >
+                        <div v-for="(contact, i) in contacts" @click="setCurrentContact(i)" class="profile-image" >
                             <img :src="contact.avatar" alt="">
                             <p>{{ contact.name }}</p>
                         </div>
