@@ -204,7 +204,11 @@ main .message-container {
 }
 .message-container .content-message.sent {
     background-color: lightgreen;
-    margin-left: 300px;
+    margin-left: 350px;
+}
+
+.message-container .content-message.received {
+    background-color: white;
 }
 
 /* ------------------------ footer ---------------------- */

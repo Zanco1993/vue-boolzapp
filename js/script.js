@@ -1,7 +1,7 @@
 new Vue({
     el: "#app",
     data: {
-        i: 0,
+        currentIndex: 0,
         contacts: [
             {
                 name: 'Michele',
@@ -92,12 +92,12 @@ new Vue({
     },
 
     methods: {
-        sentMessage: function(i) {
+        sentMessage: function(message) {
             let classesSent = [];
-            if(this.contacts[i].messages.status = 'sent') {
+            if(message.status === 'sent') {
                 classesSent.push('sent')
             }
-            if(this.contacts[i].messages.status = 'received') {
+            if(message.status === 'received') {
                 classesSent.push('received')
             }
             // if(message.status = 'received') {

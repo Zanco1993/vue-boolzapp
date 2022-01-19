@@ -65,7 +65,7 @@
                     </div>
 
                     <div class="list-contact">
-                        <div v-for="(contact, i) in contacts" class="profile-image" >
+                        <div v-for="(contact, i) in contacts" @click="" class="profile-image" >
                             <img :src="contact.avatar" alt="">
                             <p>{{ contact.name }}</p>
                         </div>
@@ -87,10 +87,10 @@
 
                         <div class="user-contact">
                             <div class="user-image">
-                                <img src="./img/avatar_1.jpg" alt="">
+                                <img :src="contacts[currentIndex].avatar" alt="">
                             </div>
                             <div class="text-header">
-                                <p>Michele</p>
+                                <p>{{ contacts[currentIndex].name }}</p>
                                 <p class="color-notification">ultimo accesso oggi alle</p>
                             </div>
                         </div>
@@ -105,12 +105,11 @@
                     <div class="message-container">
                         <!-- aggiunta immagine di sfondo messaggi  -->
                         <div
-                        v-for="(message, i) in contacts[i].messages"
+                        v-for="message in contacts[currentIndex].messages"
                         class="content-message"
-                        :class="sentMessage(i)">
+                        :class="sentMessage(message)">
 
                            <div>
-                               {{ i }}
                                 {{ message.text }}
                            </div>
 
