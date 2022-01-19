@@ -183,15 +183,13 @@ main .user-contact  .text-header {
 
 /* ------------------------message container ---------------------- */
 
-main .message-container {
-    height: calc(100% - 200px);
-    padding: 20px 100px;
-}
 
 main .message-container {
     background-image: url("../img/mine.jpg");
     height: calc(100% - 200px);
     background-position: center center;
+    padding: 20px 100px;
+    overflow-y: auto;
 }
 
 .message-container .content-message {
