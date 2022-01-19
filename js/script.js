@@ -96,7 +96,13 @@ new Vue({
                 status: 'sent'
             },
 
-            
+        autoText: 
+        {
+            // prova la risposta con il nome a chi è indirizzato
+            date: '',
+            text: 'Ciao' + this.contacts[currentIndex].name,
+            status: 'sent'
+        } 
         
         
     },
