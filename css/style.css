@@ -111,20 +111,19 @@ body {
     border-style: none;
 }
 
-.sidebar .list-contact {
-    padding-left: 10px;
-}
-
-.sidebar .profile-image {
-    padding: 10px 0;
-}
 .sidebar .profile-image:hover {
     background-color: #e8e8e8;
+}
+
+.sidebar .list-contact .profile-image {
+    height: 80px;
 }
 
 .list-contact .box-image {
     width: 70px;
     height: 70px;
+    padding-left: 10px;
+    padding-top: 10px;
     display: flex;
     align-items: center;
 }

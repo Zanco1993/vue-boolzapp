@@ -31,7 +31,7 @@
                     <div class="name-user">
                         <div class="profile-user">
                             <img src="./img/avatar_5.jpg" alt="">
-                            <span>Nome Utente</span>
+                            <span>Fabio Zanconato</span>
                         </div>
                         <div class="update-comand">
                             <i class="fas fa-circle-notch"></i>
@@ -41,12 +41,6 @@
                     </div>
 
 
-
-                    <!-- possibile v-if di scomparsa del messaggio di notifica -->
-                    <!-- icona -->
-                    <!-- scritta: SE click sulla scritta, fai scomparire 
-                        il notification-message
-                    -->
                     <div class="notification-message">
                         <div class="icon-notification">
                             <i class="far fa-bell-slash"></i>
@@ -66,6 +60,7 @@
                         placeholder="Cerca o inizia una nuova chat">
                     </div>
 
+                    
                     <div class="list-contact">
                         <div v-if="filteredContacts.length > 0">
                             <div v-for="(contact, i) in filteredContacts"
