@@ -91,6 +91,7 @@ new Vue({
         currentIndex: 0,
         autoPlayMessage: null,
         searchName: '',
+        newCurrentIndex: 0,
 
 
 
@@ -129,6 +130,7 @@ new Vue({
 
         setCurrentContact: function (i) {
             this.currentIndex = i;
+            this.newCurrentIndex = i;
         },
 
         autoMessage: function (currentIndex) {
@@ -149,21 +151,13 @@ new Vue({
             }
         },
 
-        // searchContact: function () {
-        //     this.filteredContacts = this.contacts.filter((contact) =>
-        //         contact.name.toLowerCase() === this.searchName.toLowerCase()
-        //     )
-        // },
+        searchContact: function () {
+            this.filteredContacts = this.contacts.filter((contact) =>
+                contact.name.toLowerCase().match(this.searchName.toLowerCase())
+            )
+        },
     },  
 
-    computed: {
-        searchContact: function () {
-           return this.filteredContacts = this.contacts.filter((contact) => {
-                return contact.name.toLowerCase().match(this.searchName.toLowerCase())
-                
-            });
-        }
-    }
 
 
 })
