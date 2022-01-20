@@ -96,8 +96,10 @@
                 <!-------------------INIZIO MAIN ------------------->
 
                 <!-- parte di destra  -->
-                <main>
-
+                
+                <!-- mettere filteredContact -->
+                <main v-if="filteredContacts.length > 0">
+            
                     <div class="header-user">
 
                         <div class="user-contact">
@@ -124,9 +126,9 @@
                         class="content-message"
                         :class="sentMessage(message)">
 
-                           <div>
+                        <div>
                                 {{ message.text }}
-                           </div>
+                        </div>
 
                         </div>
 
@@ -145,10 +147,70 @@
                         </div>
                         
                     </div>
+
+                </main>
                     
+
+                        
+                
+                <main v-else>
+                    
+                    
+                    <div class="header-user">
+
+                        <div class="user-contact">
+                            <div class="user-image">
+                                <img :src="contacts[currentIndex].avatar" alt="">
+                            </div>
+                            <div class="text-header">
+                                <p>{{ contacts[currentIndex].name }}</p>
+                                <p class="color-notification">ultimo accesso oggi alle</p>
+                            </div>
+                        </div>
+
+                        <div class="settings-comand">
+                            <i class="fas fa-search"></i>
+                            <i class="fas fa-paperclip"></i>
+                            <i class="fas fa-ellipsis-v"></i>                     
+                        </div>
+                    </div>
+
+                    <div class="message-container">
+                        <!-- aggiunta immagine di sfondo messaggi  -->
+                        <div
+                        v-for="message in contacts[currentIndex].messages"
+                        class="content-message"
+                        :class="sentMessage(message)">
+
+                        <div>
+                                {{ message.text }}
+                        </div>
+
+                        </div>
+
+
+                    </div>
+
+                    <div class="send-message">
+                        <div class="emoticon">
+                            <i class="far fa-smile"></i>
+                        </div>
+                        <div class="message">
+                            <input v-model="innerText.text" @keyup.enter="addItemText(currentIndex)" type="text" placeholder="Scrivi un messaggio">
+                        </div>
+                        <div class="audio-message">
+                            <i class="fas fa-microphone"></i>
+                        </div>
+                        
+                    </div>
+
+
                 </main>
 
-            </div>
+
+                    
+
+        </div>
 
                 
   </div>     
