@@ -91,8 +91,6 @@ new Vue({
         currentIndex: 0,
         autoPlayMessage: null,
         searchName: '',
-        newCurrentIndex: 0,
-
 
 
         innerText:
@@ -130,7 +128,6 @@ new Vue({
 
         setCurrentContact: function (i) {
             this.currentIndex = i;
-            this.newCurrentIndex = i;
         },
 
         autoMessage: function (currentIndex) {
@@ -151,11 +148,11 @@ new Vue({
             }
         },
 
-        searchContact: function () {
-            this.filteredContacts = this.contacts.filter((contact) =>
-                contact.name.toLowerCase().match(this.searchName.toLowerCase())
-            )
-        },
+        // searchContact: function () {
+        //     this.filteredContacts = this.contacts.filter((contact) =>
+        //         contact.name.toLowerCase().includes (this.searchName.toLowerCase())
+        //     )
+        // },
     },  
 
 
