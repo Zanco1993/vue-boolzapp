@@ -27,7 +27,11 @@
 
         <div class="container content-whatapp">
 
-                <!-- parte di sinistra -->
+
+    <!-------------------------- INIZIO SIDEBAR ------------------------------>
+
+
+            
                 <div class="sidebar">
 
                     <div class="name-user">
@@ -80,12 +84,7 @@
     
                 </div>
                    
-                        
-
-
-
-
-                <!-- ----------------FINE SIDEBAR ------------------>
+                <!-- ---------------- FINE SIDEBAR ------------------>
 
 
 
@@ -93,12 +92,8 @@
 
 
 
-                <!-------------------INIZIO MAIN ------------------->
-               
-                    
-
-                        
-                
+                <!------------------- INIZIO MAIN ------------------->
+                          
                 <main>
                     
                     
@@ -129,9 +124,12 @@
                         :class="sentMessage(message)">
 
                         <div>
-                                {{ message.text }}
-                                {{ message.date }}
+                            {{ message.text }}
                         </div>
+                        
+                        <p class="font-date">
+                            {{ message.date }}
+                        </p>
 
                         </div>
 
@@ -143,7 +141,7 @@
                             <i class="far fa-smile"></i>
                         </div>
                         <div class="message">
-                            <input v-model="innerText.text" @keyup.enter="addItemText(currentIndex)" type="text" placeholder="Scrivi un messaggio">
+                            <input v-model="innerText" @keyup.enter="addItemText(currentIndex)" type="text" placeholder="Scrivi un messaggio">
                         </div>
                         <div class="audio-message">
                             <i class="fas fa-microphone"></i>
@@ -153,6 +151,8 @@
 
 
                 </main>
+
+    <!--------------------------------- FINE MAIN ------------------------------------------>
 
 
                     

@@ -92,23 +92,8 @@ new Vue({
         currentIndex: 0,
         autoPlayMessage: null,
         searchName: '',
-
-
-        innerText:
-        {
-            date: '',
-            text: '',
-            status: 'sent'
-        },
-
-        autoText:
-        {
-            // prova la risposta con il nome a chi è indirizzato
-            date: '',
-            text: 'Ciao',
-            status: 'received'
-        }
-
+        innerText: '',
+        autoText: 'Ciao come stai?'
 
     },
 
@@ -121,9 +106,6 @@ new Vue({
             if (message.status === 'received') {
                 classesSent.push('received')
             }
-            // if(message.status = 'received') {
-            //     classesSent.push('received')
-            // }
             return classesSent;
         },
 
@@ -131,27 +113,38 @@ new Vue({
             this.currentIndex = i;
         },
 
-        autoMessage: function (currentIndex) {
-            this.autoPlayMessage = setTimeout(() => {
-                this.contacts[currentIndex].messages.push(this.autoText);
-            }, 1000)
-        },
-
         addItemText: function (currentIndex) {
             if (this.innerText.text !== '') {
-                this.contacts[currentIndex].messages.push(this.innerText);
-                this.innerText = {
+                this.contacts[currentIndex].messages.push({
                     date: this.getDate(),
-                    text: '',
+                    text: this.innerText,
                     status: 'sent'
+                })
+                this.innerText = '';
+                setTimeout(() => {
+                    this.autoMessage(currentIndex)
+                }, 1000)
                 }
-                this.autoMessage(currentIndex)
-            }
-        },
+            },
 
+        autoMessage: function (currentIndex) {
+            this.contacts[currentIndex].messages.push({ 
+                date: this.getDate(),
+                text: this.autoText,
+                status: 'received'
+            })
+        },
+        
         getDate: function() {
             return dayjs().format('DD/MM/YYYY HH:mm:ss')
-        }
+        },
+    
+    },
+
+
+})
+            
+
 
         // tengo anche questa soluzione per futuro ripasso
 
@@ -160,9 +153,9 @@ new Vue({
         //         contact.name.toLowerCase().includes (this.searchName.toLowerCase())
         //     )
         // },
-    },  
+        // },  
 
 
 
-})
+
 
