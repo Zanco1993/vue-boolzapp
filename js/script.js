@@ -1,7 +1,6 @@
 new Vue({
     el: "#app",
     data: {
-        filteredContacts: [],
         contacts: [
             {
                 name: 'Michele',
@@ -88,6 +87,8 @@ new Vue({
                 ],
             },
         ],
+
+        // filteredContacts: [],
         currentIndex: 0,
         autoPlayMessage: null,
         searchName: '',
@@ -140,13 +141,19 @@ new Vue({
             if (this.innerText.text !== '') {
                 this.contacts[currentIndex].messages.push(this.innerText);
                 this.innerText = {
-                    date: '',
+                    date: this.getDate(),
                     text: '',
                     status: 'sent'
                 }
                 this.autoMessage(currentIndex)
             }
         },
+
+        getDate: function() {
+            return dayjs().format('DD/MM/YYYY HH:mm:ss')
+        }
+
+        // tengo anche questa soluzione per futuro ripasso
 
         // searchContact: function () {
         //     this.filteredContacts = this.contacts.filter((contact) =>
