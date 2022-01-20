@@ -149,11 +149,22 @@ new Vue({
             }
         },
 
+        // searchContact: function () {
+        //     this.filteredContacts = this.contacts.filter((contact) =>
+        //         contact.name.toLowerCase() === this.searchName.toLowerCase()
+        //     )
+        // },
+    },  
+
+    computed: {
         searchContact: function () {
-            this.filteredContacts = this.contacts.filter((contact) =>
-                contact.name.toLowerCase() === this.searchName.toLowerCase()
-            )
-        },
+           return this.filteredContacts = this.contacts.filter((contact) => {
+                return contact.name.toLowerCase().match(this.searchName.toLowerCase())
+                
+            });
+        }
     }
+
+
 })
 
