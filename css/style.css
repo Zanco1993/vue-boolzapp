@@ -7,7 +7,6 @@
 body {
     font-family: 'Open Sans', sans-serif;
     background-color: grey;
-    position: relative;
 }
 
 .back-body {
@@ -29,9 +28,6 @@ body {
     background-color: rgb(213, 213, 213);
 }
 
-.container {
-    margin: 0 auto;
-}
 
 .color-notification {
     color: #a3a3a3;
@@ -47,6 +43,7 @@ body {
     height: 800px;
     display: flex;
     border: 1px solid rgb(199, 199, 199);
+    margin: auto;
 }
 
 .sidebar {
@@ -214,6 +211,10 @@ main .message-container {
     position: absolute;
     bottom: 0;
     right: 10px;
+}
+
+.message-container .modal {
+
 }
 
 

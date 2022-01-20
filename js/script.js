@@ -93,7 +93,7 @@ new Vue({
         autoPlayMessage: null,
         searchName: '',
         innerText: '',
-        autoText: 'Ciao come stai?'
+        autoText: 'Ciao come stai?',
 
     },
 
@@ -138,6 +138,8 @@ new Vue({
         getDate: function() {
             return dayjs().format('DD/MM/YYYY HH:mm:ss')
         },
+
+       
     
     },
 

@@ -21,7 +21,7 @@
     <div id="app">
 
         
-        <div class="container content-whatapp">
+        <div class="content-whatapp">
             
             <div class="back-body">
                 <div class="green-back"></div>
@@ -113,19 +113,13 @@
                         <div
                         v-for="message in contacts[currentIndex].messages"
                         class="content-message"
-                        :class="sentMessage(message)">
+                        :class="sentMessage(message)"
+                        >
 
-                        <div>
-                            {{ message.text }}
+                            <div>{{ message.text }}</div>
+                            <p class="font-date">{{ message.date }}</p>
+                            
                         </div>
-                        
-                        <p class="font-date">
-                            {{ message.date }}
-                        </p>
-
-                        </div>
-
-
                     </div>
 
                     <div class="send-message">
